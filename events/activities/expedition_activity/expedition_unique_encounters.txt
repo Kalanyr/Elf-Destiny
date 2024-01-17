@@ -132,6 +132,12 @@ expedition_unique_encounters.001 = {
 				first_valid = {
 					triggered_desc = {
 						trigger = {
+							scope:tradition_one = culture_tradition:tradition_adventurer_guilds
+						}
+						desc = expedition_unique_encounters.001.adventure_guilds
+					}
+					triggered_desc = {
+						trigger = {
 							scope:tradition_one = culture_tradition:tradition_tribal_ascension
 						}
 						desc = expedition_unique_encounters.001.tribal_ascension
@@ -166,7 +172,7 @@ expedition_unique_encounters.001 = {
 						}
 						desc = expedition_unique_encounters.001.people_of_the_bow
 					}
-					desc = unexpected_tradition_name
+					desc = expedition_unique_encounters.001.unexpected_tradition_name
 				}
 			}
 		}
@@ -179,6 +185,10 @@ expedition_unique_encounters.001 = {
 			add_culture_tradition = scope:tradition_one
 		}
 
+		mark_tradition_as_discovered = {
+			TRADITION = scope:tradition_one
+		}
+
 		change_global_variable = {name = discovered_ancient_tradition_count add = 1}
 	}
 
@@ -186,6 +196,12 @@ expedition_unique_encounters.001 = {
 		name = {
 			text = {
 				first_valid = {
+					triggered_desc = {
+						trigger = {
+							scope:tradition_two = culture_tradition:tradition_adventurer_guilds
+						}
+						desc = expedition_unique_encounters.001.adventure_guilds
+					}
 					triggered_desc = {
 						trigger = {
 							scope:tradition_two = culture_tradition:tradition_tribal_ascension
@@ -222,7 +238,7 @@ expedition_unique_encounters.001 = {
 						}
 						desc = expedition_unique_encounters.001.people_of_the_bow
 					}
-					desc = unexpected_tradition_name
+					desc = expedition_unique_encounters.001.unexpected_tradition_name
 				}
 			}
 		}
@@ -235,6 +251,10 @@ expedition_unique_encounters.001 = {
 			add_culture_tradition = scope:tradition_two
 		}
 
+		mark_tradition_as_discovered = {
+			TRADITION = scope:tradition_two
+		}
+
 		change_global_variable = {name = discovered_ancient_tradition_count add = 1}
 	}
 
@@ -242,6 +262,12 @@ expedition_unique_encounters.001 = {
 		name = {
 			text = {
 				first_valid = {
+					triggered_desc = {
+						trigger = {
+							scope:tradition_three = culture_tradition:tradition_adventurer_guilds
+						}
+						desc = expedition_unique_encounters.001.adventure_guilds
+					}
 					triggered_desc = {
 						trigger = {
 							scope:tradition_three = culture_tradition:tradition_tribal_ascension
@@ -278,7 +304,7 @@ expedition_unique_encounters.001 = {
 						}
 						desc = expedition_unique_encounters.001.people_of_the_bow
 					}
-					desc = unexpected_tradition_name
+					desc = expedition_unique_encounters.001.unexpected_tradition_name
 				}
 			}
 		}
@@ -291,6 +317,10 @@ expedition_unique_encounters.001 = {
 			add_culture_tradition = scope:tradition_three
 		}
 
+		mark_tradition_as_discovered = {
+			TRADITION = scope:tradition_three
+		}
+
 		change_global_variable = {name = discovered_ancient_tradition_count add = 1}
 	}
 
@@ -298,6 +328,12 @@ expedition_unique_encounters.001 = {
 		name = {
 			text = {
 				first_valid = {
+					triggered_desc = {
+						trigger = {
+							scope:tradition_four = culture_tradition:tradition_adventurer_guilds
+						}
+						desc = expedition_unique_encounters.001.adventure_guilds
+					}
 					triggered_desc = {
 						trigger = {
 							scope:tradition_four = culture_tradition:tradition_tribal_ascension
@@ -334,7 +370,7 @@ expedition_unique_encounters.001 = {
 						}
 						desc = expedition_unique_encounters.001.people_of_the_bow
 					}
-					desc = unexpected_tradition_name
+					desc = expedition_unique_encounters.001.unexpected_tradition_name
 				}
 			}
 		}
@@ -345,6 +381,10 @@ expedition_unique_encounters.001 = {
 
 		scope:host.culture = {
 			add_culture_tradition = scope:tradition_four
+		}
+
+		mark_tradition_as_discovered = {
+			TRADITION = scope:tradition_four
 		}
 
 		change_global_variable = {name = discovered_ancient_tradition_count add = 1}
@@ -374,54 +414,54 @@ expedition_unique_encounters.001 = {
 
 # TODO: Refactor this into controller that picks item
 # Unique Items
-expedition_unique_encounters.002 = { # Bloodstone Sceptor
-	type = activity_event
+# expedition_unique_encounters.002 = { # Bloodstone Sceptor
+# 	type = activity_event
 
-	title = "Bloodstone Sceptor Discovery"
-	desc = "Bloodstone Sceptor Discovery DESC"
+# 	title = "Bloodstone Sceptor Discovery"
+# 	desc = "Bloodstone Sceptor Discovery DESC"
 
-	theme = hunt_activity
+# 	theme = hunt_activity
 
-	widget = {
-		gui = "event_window_widget_activity_intent"
-		container = "custom_widgets_container"
-	}
+# 	widget = {
+# 		gui = "event_window_widget_activity_intent"
+# 		container = "custom_widgets_container"
+# 	}
 
-	left_portrait = {
-		character = scope:host
-		animation = thinking
-	}
+# 	left_portrait = {
+# 		character = scope:host
+# 		animation = thinking
+# 	}
 
-	option = {
-		name = expedition.030.takeSceptor
+# 	option = {
+# 		name = expedition.030.takeSceptor
 
-		scope:host = {
-			create_artifact = {	
-				name = "Bloodstone Sceptor"
-				description = placeholder
-				creator = scope:creator
-				visuals = regalia
-				type = regalia
-				modifier = artifact_placeholder_modifier
-				wealth = 100
-				quality = 100
-				save_scope_as = bloodstone_sceptor
-			}
-		}
+# 		scope:host = {
+# 			create_artifact = {	
+# 				name = "Bloodstone Sceptor"
+# 				description = placeholder
+# 				creator = scope:creator
+# 				visuals = regalia
+# 				type = regalia
+# 				modifier = artifact_placeholder_modifier
+# 				wealth = 100
+# 				quality = 100
+# 				save_scope_as = bloodstone_sceptor
+# 			}
+# 		}
 
-		# scope:activity = {
-		# 	set_variable = {
-		# 		name = status
-		# 		value = flag:expedition_is_over
-		# 	}
-		# }
+# 		# scope:activity = {
+# 		# 	set_variable = {
+# 		# 		name = status
+# 		# 		value = flag:expedition_is_over
+# 		# 	}
+# 		# }
 
-		set_global_variable = {
-			name = 01_bloodstone_sceptor_found
-			value = yes
-		}
-	}
-}
+# 		set_global_variable = {
+# 			name = 01_bloodstone_sceptor_found
+# 			value = yes
+# 		}
+# 	}
+# }
 
 expedition_unique_encounters.0021 = { # Portal Capacitor
 	type = activity_event
@@ -444,9 +484,16 @@ expedition_unique_encounters.0021 = { # Portal Capacitor
 	}
 
 	option = {
-		name = expedition.0021.takeCapacitor
+		name = expedition_unique_encounters.0021.takeCapacitor
 
 		create_portal_spark_capacitor_effect = { OWNER = scope:host }
+
+		scope:activity.activity_location.barony = {
+			set_variable = {
+				name = portal_capacitor_found_here 
+				value = yes
+			}
+		}
 
 		set_global_variable = {
 			name = portal_capacitor_found
@@ -476,9 +523,16 @@ expedition_unique_encounters.0022 = { # Portal Navigation Relay
 	}
 
 	option = {
-		name = expedition.0022.takeNavigationRelay
+		name = expedition_unique_encounters.0022.takeNavigationRelay
 
 		create_portal_navigation_relay_effect = { OWNER = scope:host }
+
+		scope:activity.activity_location.barony = {
+			set_variable = {
+				name = portal_navigation_relay_found_here 
+				value = yes
+			}
+		}
 
 		set_global_variable = {
 			name = portal_navigation_relay_found
@@ -488,33 +542,33 @@ expedition_unique_encounters.0022 = { # Portal Navigation Relay
 }
 
 # Map to Other Ruins
-expedition_unique_encounters.003 = { #
-	type = activity_event
+# expedition_unique_encounters.003 = { #
+# 	type = activity_event
 
-	title = "Lost Map Discovery"
-	desc = "Lost Map Discovery DESC"
+# 	title = "Lost Map Discovery"
+# 	desc = "Lost Map Discovery DESC"
 
-	theme = hunt_activity
+# 	theme = hunt_activity
 
-	widget = {
-		gui = "event_window_widget_activity_intent"
-		container = "custom_widgets_container"
-	}
+# 	widget = {
+# 		gui = "event_window_widget_activity_intent"
+# 		container = "custom_widgets_container"
+# 	}
 
-	left_portrait = {
-		character = scope:host
-		animation = thinking
-	}
+# 	left_portrait = {
+# 		character = scope:host
+# 		animation = thinking
+# 	}
 
-	immediate = {
-		set_global_variable = {
-			name = 01_other_ruins_location_found
-			value = yes
-		}
-	}
+# 	immediate = {
+# 		set_global_variable = {
+# 			name = 01_other_ruins_location_found
+# 			value = yes
+# 		}
+# 	}
 
-	option = {
-		name = expedition.040.more_to_discover
-	}
-}
+# 	option = {
+# 		name = expedition.040.more_to_discover
+# 	}
+# }
 
