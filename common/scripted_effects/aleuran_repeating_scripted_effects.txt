@@ -1,0 +1,34 @@
+﻿
+daughter_sent_to_deep_wood_effect = {
+	scope:daughter = {
+		start_travel_plan = {
+			destination = title:b_cykma.title_province # Deepwood barony
+			on_start_on_action = on_daughter_goes_to_deep_wood_for_parent
+			on_travel_planner_cancel_on_action = on_daughter_goes_to_deep_wood_travel_planner_exit
+			on_arrival_on_action = on_daughter_arrives_at_deepwood
+			on_arrival_destinations = last
+			return_trip = no # One way
+		}
+	}
+}
+
+create_and_assign_aeluran_advisor_effect = {
+	debug_log = "Creating Aeluran Advisor"
+	debug_log_scopes = yes
+
+	create_character = {
+		template = aeluran_sister_advisor
+		dynasty = none
+		location = root.location
+		faith = root.faith
+		culture = root.culture
+		save_scope_as = aeluran_sister_advisor
+	}
+
+	add_courtier = scope:aeluran_sister_advisor
+
+	assign_councillor_type = {
+		type = councillor_aeluran_advisor
+		target = scope:aeluran_sister_advisor
+	}
+}
