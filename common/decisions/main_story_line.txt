@@ -70,9 +70,10 @@ transport_the_grand_portal_decision = {
 	desc = transport_the_grand_portal_decision_desc
 	selection_tooltip = transport_the_grand_portal_decision_tooltip
 	major = yes
-	ai_goal = yes
+	ai_goal = no
 
 	is_shown = {
+		is_ai = no
 		is_ruler = yes
 		is_landed = yes
 
@@ -86,6 +87,17 @@ transport_the_grand_portal_decision = {
 			is_target_in_global_variable_list = {
 				name = unavailable_unique_decisions
 				target = flag:flag_grand_portal_restored
+			}
+		}
+	}
+
+	widget = {
+		controller = create_holy_order
+		gui = "decision_view_widget_move_portal"
+		barony_valid = {
+			holder = scope:ruler
+			title_province = {
+				has_special_building = no
 			}
 		}
 	}
@@ -146,9 +158,10 @@ restore_the_grand_portal_decision = {
 	desc = restore_the_grand_portal_decision_desc
 	selection_tooltip = restore_the_grand_portal_decision_tooltip
 	major = yes
-	ai_goal = yes
+	ai_goal = no
 
 	is_shown = {
+		is_ai = no
 		is_ruler = yes
 		is_landed = yes
 
